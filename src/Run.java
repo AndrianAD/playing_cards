@@ -1,10 +1,12 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 /**
  * Created by User on 170313.
  */
     public class Run {
-    private static ArrayList mCardList=new ArrayList();
+  public static ArrayList mCardList=new ArrayList();
     public static void main(String[] args) {
         mCardList = new ArrayList<>();
         Rank[] ranks = Rank.values;
@@ -15,10 +17,14 @@ import java.util.ArrayList;
                 Card card = new Card(ranks[i], suites[j]);
                 mCardList.add(card);
                 System.out.println(card.getSuit().getName() + " " + card.getRank().getName());
-                int a=mCardList.size();
-                System.out.println(a);
             }
         }
+
+        Collections.shuffle(mCardList, new Random(mCardList.size()));
+        Card card= (Card) mCardList.get(3);
+        System.out.println(card.getSuit().getName() + " " + card.getRank().getName());
+
+
 
 
 

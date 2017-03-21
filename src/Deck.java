@@ -1,13 +1,29 @@
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck {
-            Suit suit=new Suit(null);
-            Rank rank=new Rank(null);
+    public static ArrayList mCardList=new ArrayList();
+    Rank[] ranks = Rank.values;
+    Suit[] suites = Suit.values;
 
-
-
+            public  Deck() {
+                for (int i = 0; i < suites.length; i++) {
+                    for (int j = 0; j < ranks.length; j++) {
+                        Card card = new Card(ranks[j], suites[i]);
+                        mCardList.add(card);
+                        //System.out.println(card.getSuit().getName() + " " + card.getRank().getName());
+                    }
+                }
+            }
 
         //Перемішує колоду у випадковому порядку
         public void shuffle() {
+            System.out.println("Перемешанный:");
+            Collections.shuffle(mCardList);
+            for(int x=0;x<mCardList.size();x++) {
+                Card card = (Card) mCardList.get(x);
+                //System.out.println(card.getSuit().getName() + " " + card.getRank().getName());
+            }
         }
 
 
@@ -27,13 +43,19 @@ public class Deck {
 //        * HEARTS 7
 //        * HEARTS 6
 //        * І так далі для DIAMONDS, CLUBS, SPADES */
-//        public void order() {
+        public void order() {
+                Deck deck=new Deck();
+
+
+        }
 //
 //
 //        }
 //
 //        //Повертає true у випадку коли в колоді ще доступні карти
-//        public boolean hasNext() {
+        public boolean hasNext() {
+             if(mCardList.isEmpty() )
+        }
 //        }
 //
 //        //"Виймає" одну карту з колоди, коли буде видано всі 36 карт повертає null

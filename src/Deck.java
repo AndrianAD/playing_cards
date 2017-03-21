@@ -54,8 +54,12 @@ public class Deck {
 //
 //        //Повертає true у випадку коли в колоді ще доступні карти
         public boolean hasNext() {
-             if(mCardList.isEmpty() )
+             if(mCardList.size()!=0)
+                 return true;
+             else
+            return false;
         }
+
 //        }
 //
 //        //"Виймає" одну карту з колоди, коли буде видано всі 36 карт повертає null

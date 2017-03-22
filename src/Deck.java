@@ -66,10 +66,15 @@ public class Deck {
 //        //Карти виймаються з "вершини" колоди. Наприклад перший виклик видасть SPADES 6 потім
 //        //SPADES 7, ..., CLUBS 6, ..., CLUBS Ace і так далі до HEARTS Ace
        public Card drawOne() {
-            int indexsize=mCardList.size();
-            Card card= (Card) mCardList.get(indexsize-1);
-            mCardList.remove(indexsize-1);
-            return card;
+                if (mCardList.size()==0)
+                    return null;
+                else
+                    {
+                    int indexsize=mCardList.size();
+                    Card card= (Card) mCardList.get(indexsize-1);
+                    mCardList.remove(indexsize-1);
+                    return card;
+                    }
             }
     }
 

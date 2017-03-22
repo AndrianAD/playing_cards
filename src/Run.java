@@ -5,7 +5,6 @@
     public static void main(String[] args) {
         Deck deck=new Deck();
 
-
         Card card=deck.drawOne();
         System.out.println(card.getSuit().getName() + " " + card.getRank().getName());
         Card card2=deck.drawOne();

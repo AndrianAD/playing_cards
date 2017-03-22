@@ -11,7 +11,7 @@ public class Deck {
                     for (int j = 0; j < ranks.length; j++) {
                         Card card = new Card(ranks[j], suites[i]);
                         mCardList.add(card);
-                        System.out.println(card.getSuit().getName() + " " + card.getRank().getName());
+                        //System.out.println(card.getSuit().getName() + " " + card.getRank().getName());
                     }
                 }
             }
@@ -66,9 +66,10 @@ public class Deck {
 //        //Карти виймаються з "вершини" колоди. Наприклад перший виклик видасть SPADES 6 потім
 //        //SPADES 7, ..., CLUBS 6, ..., CLUBS Ace і так далі до HEARTS Ace
        public Card drawOne() {
-            Card card= new Card();
-
-
+            int indexsize=mCardList.size();
+            Card card= (Card) mCardList.get(indexsize-1);
+            mCardList.remove(indexsize-1);
+            return card;
             }
     }
 

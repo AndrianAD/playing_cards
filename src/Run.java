@@ -3,15 +3,18 @@
  */
     public class Run {
     public static void main(String[] args) {
-    Suit[]masti=new Suit[4];
-    for(int i=0;i<4;i++)
-        masti[i]=Suit.values[i];
-        System.out.println(masti);
+        Deck deck=new Deck();
+
+        Card card=deck.drawOne();
+        System.out.println(card.getSuit().getName() + " " + card.getRank().getName());
+        Card card2=deck.drawOne();
+        System.out.println(card2.getSuit().getName() + " " + card2.getRank().getName());
+        Card card3=deck.drawOne();
+        System.out.println(card3.getSuit().getName() + " " + card3.getRank().getName());
 
 
 
-//        Card card=new Card(Rank.ACE,Suit.CLUBS);
-//        System.out.println(card.getRank().getName());
+
     }
 
     }

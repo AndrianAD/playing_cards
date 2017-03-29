@@ -54,7 +54,7 @@ public class Deck {
 //
 //        //Повертає true у випадку коли в колоді ще доступні карти
         public boolean hasNext() {
-             if(mCardList.size()!=0)
+             if(mCardList.size()>0)
                  return true;
              else
             return false;
@@ -65,7 +65,16 @@ public class Deck {
 //        //"Виймає" одну карту з колоди, коли буде видано всі 36 карт повертає null
 //        //Карти виймаються з "вершини" колоди. Наприклад перший виклик видасть SPADES 6 потім
 //        //SPADES 7, ..., CLUBS 6, ..., CLUBS Ace і так далі до HEARTS Ace
-//        public Card drawOne() {
-//        }
+       public Card drawOne() {
+                if (mCardList.size()==0)
+                    return null;
+                else
+                    {
+                    int indexsize=mCardList.size();
+                    Card card= (Card) mCardList.get(indexsize-1);
+                    mCardList.remove(indexsize-1);
+                    return card;
+                    }
+            }
     }
 

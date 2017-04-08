@@ -21,6 +21,7 @@ public class Card {
         }
 
         public void setSuit(Suit suit) {
+
             this.suit = suit;
         }
 }

@@ -63,10 +63,13 @@ public class Tonalinosti {
 //                        System.out.println(" лист 2 индексы " + s);
                     int peremennaia=k+z-n-1;
                     if(peremennaia<0){
-
+                        peremennaia=peremennaia+n+7;
+                    }
+                    if(peremennaia>37){
+                        peremennaia=peremennaia-n-7;
                     }
                     Dirka temp= (Dirka) noteList2.get(peremennaia);
-                    rezult += temp.getTabs().getName();
+                    rezult += " "+temp.getTabs().getName();
 
                     break;
 

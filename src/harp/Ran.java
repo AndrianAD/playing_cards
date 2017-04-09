@@ -10,8 +10,8 @@ public class Ran {
         z = SelectTon();
         Tonalinosti ton2 = new Tonalinosti(z);
         input_tabs();
-//        System.out.println();
-//        System.out.println("1: " + n + "  2: " + z);
+        System.out.println();
+        System.out.println("1: " + n + "  2: " + z);
         changetabs();
 
 

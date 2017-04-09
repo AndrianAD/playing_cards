@@ -23,7 +23,7 @@ public class Tonalinosti {
         for (int i = n; i < tabs.length + n; i++) {
             Dirka dirka = new Dirka(tabs[i - n], note[i]);
             noteList.add(dirka);
-            //System.out.println(dirka.getNote().getName() + ":   " + dirka.getTabs().getName());
+            System.out.println(dirka.getNote().getName() + ":   " + dirka.getTabs().getName());
         }
     }
 // // конструктор второй тональности
@@ -31,7 +31,7 @@ public class Tonalinosti {
         for (int i = z; i < tabs.length + z; i++) {
             Dirka dirka = new Dirka(tabs[i - z], note[i]);
             noteList2.add(dirka);
-            //System.out.println(dirka.getNote().getName() + ":   " + dirka.getTabs().getName());
+            System.out.println(dirka.getNote().getName() + ":   " + dirka.getTabs().getName());
         }
 
     }
@@ -61,7 +61,11 @@ public class Tonalinosti {
 //                    list2.add(0, String.valueOf(k));
 //                    for (String s : list2) {
 //                        System.out.println(" лист 2 индексы " + s);
-                    Dirka temp= (Dirka) noteList2.get(k+n-z-1);
+                    int peremennaia=k+z-n-1;
+                    if(peremennaia<0){
+
+                    }
+                    Dirka temp= (Dirka) noteList2.get(peremennaia);
                     rezult += temp.getTabs().getName();
 
                     break;

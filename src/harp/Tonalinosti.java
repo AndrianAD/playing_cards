@@ -1,61 +1,78 @@
 package harp;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import static harp.Ran.z;
 
 public class Tonalinosti {
     public static ArrayList noteList = new ArrayList();
     public static ArrayList noteList2 = new ArrayList();
     public static ArrayList gamma = new ArrayList();
     public static List<String> list = new ArrayList<String>();
+    public static List<String> list2 = new ArrayList<String>();
     Tabs[] tabs = Tabs.values;
     Note[] note = Note.values;
-    public static int n = SelectTon();
+    static String rezult=" ";
+    public static int n = SelectTon();// номер первой тольности
 
+// конструктор первой тональности
     public Tonalinosti() {
         for (int i = n; i < tabs.length + n; i++) {
             Dirka dirka = new Dirka(tabs[i - n], note[i]);
             noteList.add(dirka);
-            System.out.println(dirka.getNote().getName() + ":   " + dirka.getTabs().getName());
+            //System.out.println(dirka.getNote().getName() + ":   " + dirka.getTabs().getName());
         }
     }
-
+// // конструктор второй тональности
     public Tonalinosti(int z) {
         for (int i = z; i < tabs.length + z; i++) {
             Dirka dirka = new Dirka(tabs[i - z], note[i]);
             noteList2.add(dirka);
-            System.out.println(dirka.getNote().getName() + ":   " + dirka.getTabs().getName());
+            //System.out.println(dirka.getNote().getName() + ":   " + dirka.getTabs().getName());
         }
 
     }
 
-    
+// Ввод исходных табов от пользователя
     public static void input_tabs() {
+        System.out.println("Введите ваши табы:");
         Scanner scanner = new Scanner(System.in);
         String inputtabs = scanner.nextLine();
         String str[] = inputtabs.split(" ");
         list = Arrays.asList(str);
-        for (String s : list) {
-            System.out.print(" " + s);
-        }
+//        for (String s : list) {
+//            System.out.print(" " + s);
+//        }
     }
 
     public static void changetabs() {
         int k = 0;
         for (int i = 0; i < list.size(); i++) {
+            k=0;
             for (int j = 0; j < noteList.size(); j++) {
                 Dirka dirka = (Dirka) noteList.get(j);
+                k++;
                 String list_i = list.get(i);
                 String list_J = dirka.getTabs().getName();
                 if (list_J.equals(list_i)) {
-                    k++;
-                    System.out.println("совпадении:" + k);
+//                    list2.add(0, String.valueOf(k));
+//                    for (String s : list2) {
+//                        System.out.println(" лист 2 индексы " + s);
+                    Dirka temp= (Dirka) noteList2.get(k+n-z-1);
+                    rezult += temp.getTabs().getName();
+
+                    break;
+
+                    }
+
                 }
             }
+        System.out.println("Результат" +rezult);
         }
-    }
+
 
 
     public static ArrayList getGamma1position() {
